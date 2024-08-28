@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Transportador - Cargoes SAS</title>
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+<body>
+    <nav>
+        <!-- Incluir navegación similar a index.html -->
+    </nav>
+    
+    <section class="page-section" id="transportador-perfil">
+        <div class="container">
+            <h2 class="section-heading text-uppercase">Perfil de Transportador</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Estado</h3>
+                    <form id="estado-form">
+                        <div class="form-group">
+                            <label for="disponibilidad">Disponibilidad:</label>
+                            <select id="disponibilidad" name="disponibilidad">
+                                <option value="disponible">Disponible</option>
+                                <option value="ocupado">Ocupado</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Actualizar Estado</button>
+                    </form>
+                </div>
+<div class="col-md-12 mt-4">
+    <h3>Rutas Disponibles</h3>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>ID Ruta</th>
+          <th>Origen</th>
+          <th>Destino</th>
+          <th>Distancia</th>
+          <th>Carga</th>
+          <th>Acción</th>
+        </tr>
+      </thead>
+      <tbody id="rutas-disponibles">
+      </tbody>
+    </table>
+  </div>
+  
+  <div class="col-md-6 mt-4">
+    <h3>Mi Rendimiento</h3>
+    <canvas id="grafico-rendimiento"></canvas>
+  </div>
+                <div class="col-md-6">
+                    <h3>Mis Viajes</h3>
+                    <div id="viajes-lista">
+                        <!-- Aquí se mostrarán los viajes asignados al transportador -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="transportador.js"></script>
+</body>
+</html>

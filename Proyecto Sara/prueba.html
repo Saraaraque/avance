@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empresa Transporte</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/logo.png" />
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #333;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .titulo {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #0c0202;
+            margin-bottom: 20px;
+            font-family: "Homer Simpson UI";
+        }
+
+        .subtitulo {
+            font-size: 1.8rem;
+            color: #160c0c;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+            font-family: "Homer Simpson UI";
+        }
+
+        .tabla {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .tabla th, .tabla td {
+            border: 1px solid #ddd;
+            
+            padding: 12px;
+            text-align: left;
+            font-family: "Courier New", monospace;
+        }
+
+        .tabla th {
+            background-color: #0dcaf0;
+            color: #0c0202;
+        }
+
+        .tabla tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .formulario {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .etiqueta {
+            font-size: 1rem;
+            margin-bottom: 5px;
+            color: #333;
+            font-family: "Homer Simpson UI";
+        }
+
+        .input-text {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .input-text:focus {
+            border-color: #0dcaf0;
+            outline: none;
+        }
+
+        .boton {
+            padding: 10px 20px;
+            background-color: #0dcaf0;
+            color: #0c0202;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: background-color 0.3s;
+            font-family: "Homer Simpson UI";
+        }
+
+        .boton:hover {
+            background-color: #0056b3;
+        }
+
+        .resultado {
+            font-size: 1rem;
+            color: #0c0202;
+            margin-top: 15px;
+            font-family: "Homer Simpson UI";
+            font-size: 1.3rem;
+        }  
+        h2 {
+            display: block;
+            font-size: 1.5em;
+            margin-block-start: 0.83em;
+            margin-block-end: 0.83em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            font-weight: bold;
+            unicode-bidi: isolate;
+            font-family: "Homer Simpson UI";
+
+        }
+        h3 {
+            display: block;
+            font-size: 1.17em;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            font-weight: bold;
+            unicode-bidi: isolate;
+            font-family: "Homer Simpson UI";
+        }
+        
+    </style>
+</head>
+<body> 
+    <div class="container">
+        <h1 class="titulo">EMPRESA TRANSPORTE</h1>
+        <div class="logo">
+            <img src="assets/img/logo.png" alt="logo Intercarga" width="140" height="140" style="margin-top: -100px;" />
+        </div>
+        <div id="camiones-container" class="seccion">
+            <h2 class="subtitulo">Camiones Registrados</h2>
+            <table id="camiones-table" class="tabla">
+                <thead>
+                    <tr>
+                        <th>Matrícula</th>
+                        <th>Capacidad de Carga (kg)</th>
+                        <th>Consumo de Gasolina (gal/km)</th>
+                        <th>Carga Actual (kg)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="form-container" class="seccion">
+            <h2 class="subtitulo">Registrar Camión</h2>
+            <form id="camion-form" class="formulario">
+                <div class="form-group">
+                    <label for="matricula" class="etiqueta">Matrícula:</label>
+                    <input type="text" id="matricula" class="input-text" placeholder="Ingresa la matrícula" required>
+                </div>
+                <div class="form-group">
+                    <label for="capacidad" class="etiqueta">Capacidad de Carga (kg):</label>
+                    <input type="number" id="capacidad" class="input-text" placeholder="Ingresa la capacidad de carga" required>
+                </div>
+                <div class="form-group">
+                    <label for="consumo" class="etiqueta">Consumo de Gasolina (gal/km):</label>
+                    <input type="number" id="consumo" class="input-text" placeholder="Ingresa el consumo de gasolina" required>
+                </div>
+                <button type="submit" class="boton">Registrar Camión</button>
+            </form>
+        </div>
+
+        <div id="carga-container" class="seccion">
+            <h2 class="subtitulo">Cargar Camión</h2>
+            <div class="form-group">
+                <label for="peso-carga" class="etiqueta">Peso de la Carga (kg):</label>
+                <input type="number" id="peso-carga" class="input-text" placeholder="Ingresa el peso de la carga" required>
+            </div>
+            <br>
+            <button id="cargar-btn" class="boton">Mostrar el mejor camión</button>
+            <p id="resultado" class="resultado"></p>
+        </div>
+        <section class="page-section" id="contact">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Contactenos</h2>
+                    <h3 class="section-heading text-uppercase">Pongase en contacto con nosotros para poder brindarle nuestros servicios de cargue y descargue</h3>
+                </div>
+                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                    <div class="row align-items-stretch mb-5">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input class="form-control" id="name" type="text" placeholder="Your Name *" data-sb-validations="required" />
+                                <div class="invalid-feedback" data-sb-feedback="name:required">Ingrese su nombre</div>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" id="email" type="email" placeholder="Your Email *" data-sb-validations="required,email" />
+                                <div class="invalid-feedback" data-sb-feedback="email:required">Se requiere que usted llene este espacio</div>
+                                <div class="invalid-feedback" data-sb-feedback="email:email">El correo no es valido</div>
+                            </div>
+                            <div class="form-group mb-md-0">
+                                <input class="form-control" id="phone" type="tel" placeholder="Your Phone *" data-sb-validations="required" />
+                                <div class="invalid-feedback" data-sb-feedback="phone:required">Ingrese su numero de telefono</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group form-group-textarea mb-md-0">
+                                <textarea class="form-control" id="message" placeholder="Your Message *" data-sb-validations="required"></textarea>
+                                <div class="invalid-feedback" data-sb-feedback="message:required">Ingrese un mensaje dependiendo de su necesidad</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-none" id="submitSuccessMessage">
+                        <div class="text-center text-white mb-3">
+                            <div class="fw-bolder">Gracias por comunicarse con nosotros, pronto daramos contacto con usted</div>
+                            <br />
+                            <a href="https://startbootstrap.com/solution/contact-forms"></a>
+                        </div>
+                    </div>
+                    <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error al enviar el mensaje ¡Verifique!</div></div>
+                    <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase disabled" id="submitButton" type="submit">Enviar</button></div>
+                </form>
+            </div>
+        </section>
+    <script>
+        const camiones = [];
+
+        document.getElementById('camion-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const matricula = document.getElementById('matricula').value;
+            const capacidad = parseFloat(document.getElementById('capacidad').value);
+            const consumo = parseFloat(document.getElementById('consumo').value);
+
+            const camion = {
+                matricula: matricula,
+                capacidad: capacidad,
+                consumo: consumo,
+                cargaActual: 0
+            };
+
+            camiones.push(camion);
+            agregarCamionATabla(camion);
+            document.getElementById('camion-form').reset();
+        });
+
+        function agregarCamionATabla(camion) {
+            const tabla = document.querySelector('#camiones-table tbody');
+            const fila = document.createElement('tr');
+
+            fila.innerHTML = `
+                <td>${camion.matricula}</td>
+                <td>${camion.capacidad}</td>
+                <td>${camion.consumo}</td>
+                <td>${camion.cargaActual}</td>
+            `;
+
+            tabla.appendChild(fila);
+        }
+
+        document.getElementById('cargar-btn').addEventListener('click', function() {
+            const pesoCarga = parseFloat(document.getElementById('peso-carga').value);
+            let mejorCamion = null;
+
+            for (let camion of camiones) {
+                if (camion.capacidad >= camion.cargaActual + pesoCarga) {
+                    if (!mejorCamion || camion.consumo < mejorCamion.consumo) {
+                        mejorCamion = camion;
+                    }
+                }
+            }
+
+            const resultado = document.getElementById('resultado');
+            if (mejorCamion) {
+                mejorCamion.cargaActual += pesoCarga;
+                actualizarTabla();
+                resultado.textContent = `Carga añadida al camión con matrícula ${mejorCamion.matricula}.`;
+            } else {
+                resultado.textContent = 'No hay camiones disponibles con capacidad suficiente.';
+            }
+        });
+
+        function actualizarTabla() {
+            const tabla = document.querySelector('#camiones-table tbody');
+            tabla.innerHTML = '';
+            for (let camion of camiones) {
+                agregarCamionATabla(camion);
+            }
+        }
+    </script>
+</body>
+</html>
+

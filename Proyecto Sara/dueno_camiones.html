@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dueño de Camiones - Cargoes SAS</title>
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+<body>
+    <nav>
+        <!-- Incluir navegación similar a index.html -->
+    </nav>
+    
+    <section class="page-section" id="dueno-camiones">
+        <div class="container">
+            <h2 class="section-heading text-uppercase">Panel de Dueño de Camiones</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Mis Camiones</h3>
+                    <div id="camiones-lista">
+                        <!-- Agregar después de la lista de camiones -->
+<div class="col-md-12 mt-4">
+    <h3>Rendimiento de Flota</h3>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Matrícula</th>
+          <th>Km Recorridos</th>
+          <th>Carga Transportada (kg)</th>
+          <th>Eficiencia Combustible</th>
+        </tr>
+      </thead>
+      <tbody id="rendimiento-flota">
+        <!-- El rendimiento se cargará dinámicamente aquí -->
+      </tbody>
+    </table>
+  </div>
+  
+  <div class="col-md-6 mt-4">
+    <h3>Mantenimiento Programado</h3>
+    <ul id="lista-mantenimiento" class="list-group">
+      <!-- Las tareas de mantenimiento se cargarán dinámicamente aquí -->
+    </ul>
+  </div>
+                        <!-- Aquí se mostrarán los camiones del dueño -->
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h3>Agregar Camión</h3>
+                    <form id="agregar-camion-form">
+                        <div class="form-group">
+                            <label for="matricula">Matrícula:</label>
+                            <input type="text" id="matricula" name="matricula" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="capacidad">Capacidad (kg):</label>
+                            <input type="number" id="capacidad" name="capacidad" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="modelo">Modelo:</label>
+                            <input type="text" id="modelo" name="modelo" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Agregar Camión</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="dueno_camiones.js"></script>
+</body>
+</html>
